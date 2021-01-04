@@ -16,7 +16,7 @@ namespace ZHI.ZSystem
         /// <summary>
         /// AES KEY 长度（位）
         /// </summary>
-        private static int[] _aes_key_size_array = { 128, 192, 256 };
+        private static readonly int[] _aes_key_size_array = { 128, 192, 256 };
         /// <summary>
         /// MD5计算指定字符串哈希值
         /// </summary>
@@ -197,11 +197,10 @@ namespace ZHI.ZSystem
         /// <returns></returns>
         public static string AESDecryptFromHex(string input, string key, string iv = null, AesCipherMode cipherMode = AesCipherMode.CBC, AesPaddingMode paddingMode = AesPaddingMode.PKCS7Padding)
         {
-            var @char = "";
             var bytes = new byte[input.Length / 2];
             for (int index = 0; index < input.Length / 2; index++)
             {
-                @char = input.Substring(index * 2, 2);
+                var @char = input.Substring(index * 2, 2);
                 bytes[index] = Convert.ToByte(@char, 16);
             }
             return AESDecryptFromBytes(bytes, key, iv, cipherMode, paddingMode);

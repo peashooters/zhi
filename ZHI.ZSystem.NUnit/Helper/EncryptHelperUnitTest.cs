@@ -43,7 +43,7 @@ namespace ZHI.ZSystem.NUnit.Helper
             //####注：没有一个网站能完全与本工具库的加密结果完全匹配，但是以上工具网站中，至少能找到一个与本工具库加密结果完全相同的算法模式与填充模式
             //AES_Example_KEY_IV();
             //AES_Example_CBC();
-            //AES_Example_ECB();
+            AES_Example_ECB();
             //AES_Example_OFB();
             //AES_Example_CFB();
             //AES_Example_CTR();

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace ZHI.ZSystem.NetFramework.Unit
 {
@@ -8,6 +9,7 @@ namespace ZHI.ZSystem.NetFramework.Unit
         [TestMethod]
         public void Test()
         {
+            Console.WriteLine("");
         }
     }
 }
