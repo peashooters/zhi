@@ -1,0 +1,868 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZHI.ZSystem</name>
+    </assembly>
+    <members>
+        <member name="T:ZHI.ZSystem.AesCipherMode">
+            <summary>
+            AES密码模式（AES Cipher Mode）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesCipherMode.CBC">
+            <summary>
+            System.Security.Cryptography.CBC
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesCipherMode.ECB">
+            <summary>
+            System.Security.Cryptography.ECB
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesCipherMode.OFB">
+            <summary>
+            System.Security.Cryptography.OFB
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesCipherMode.CFB">
+            <summary>
+            System.Security.Cryptography.CFB
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesCipherMode.CTS">
+            <summary>
+            System.Security.Cryptography.CTS
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesCipherMode.CTR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ZHI.ZSystem.AesPaddingMode">
+            <summary>
+            AES 填充模式
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesPaddingMode.NoPadding">
+            <summary>
+            System.Security.Cryptography.PaddingMode.None
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesPaddingMode.PKCS7Padding">
+            <summary>
+            System.Security.Cryptography.PaddingMode.PKCS7
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesPaddingMode.ZeroPadding">
+            <summary>
+            System.Security.Cryptography.PaddingMode.Zeros
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesPaddingMode.ANSIX923Padding">
+            <summary>
+            System.Security.Cryptography.PaddingMode.ANSIX923
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesPaddingMode.ISO10126Padding">
+            <summary>
+            System.Security.Cryptography.PaddingMode.ISO10126
+            </summary>
+        </member>
+        <member name="T:ZHI.ZSystem.TimeStampUnit">
+            <summary>
+            时间戳单位（TimeStamp Unit）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.TimeStampUnit.Second">
+            <summary>
+            秒
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.TimeStampUnit.Millisecond">
+            <summary>
+            毫秒
+            </summary>
+        </member>
+        <member name="T:ZHI.ZSystem.ExtDateTime">
+            <summary>
+            时间扩展（DateTime Extension）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.ExtDateTime._unix_init_time">
+            <summary>
+            时间戳计算起始时间
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtDateTime.ToUtcTimeStamp(System.DateTime,ZHI.ZSystem.TimeStampUnit)">
+            <summary>
+            获取当前DateTime实例的时间戳（Gets the timestamp of the current time instance）
+            </summary>
+            <param name="value"></param>
+            <param name="unit">精确单位</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.ExtEnum">
+            <summary>
+            枚举扩展（Enum Extension）
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtEnum.ToInt(System.Enum)">
+            <summary>
+            将当前枚举实例转为int32（Converts the current enumeration instance to int）
+            </summary>
+            <param name="value">枚举</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtEnum.GetDescription(System.Enum)">
+            <summary>
+            获取特性 (DisplayAttribute) 的说明，如果未使用该特性，则返回枚举的名称（Gets the description of the attribute (displayattribute); if not used, returns the name of the enumeration）
+            </summary>
+            <param name="value">枚举</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.ExtObject">
+            <summary>
+            对象扩展(Object Extension)
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToUInt16(System.Object)">
+            <summary>
+            将对象实例转换为UInt16（Convert object instance to UInt16）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToUInt32(System.Object)">
+            <summary>
+            将对象实例转换为UInt32（Convert object instance to UInt32）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToUInt64(System.Object)">
+            <summary>
+            将对象实例转换为UInt64（Convert object instance to UInt64）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToInt16(System.Object)">
+            <summary>
+            将对象实例转换为Int16（Convert object instance to Int16）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToInt32(System.Object)">
+            <summary>
+            将对象实例转换为Int32（Convert object instance to Int32）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToInt64(System.Object)">
+            <summary>
+            将对象实例转换为Int64（Convert object instance to Int64）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToDecimal(System.Object)">
+            <summary>
+            将对象实例转换为Decimal（Convert object instance to Decimal）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToDouble(System.Object)">
+            <summary>
+            将对象实例转换为Double（Convert object instance to Double）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToSingle(System.Object)">
+            <summary>
+            将对象实例转换为float（Convert object instance to float）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToBoolean(System.Object)">
+            <summary>
+            将对象实例转换为Boolean（Convert object instance to Boolean）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.ToDateTime(System.Object)">
+            <summary>
+            将对象实例转换为DateTime（Convert object instance to DateTime）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToUInt16(System.Object)">
+            <summary>
+            将对象实例转换为UInt16（Convert object instance to UInt16）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToUInt32(System.Object)">
+            <summary>
+            将对象实例转换为UInt32（Convert object instance to UInt32）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToUInt64(System.Object)">
+            <summary>
+            将对象实例转换为UInt64（Convert object instance to UInt64）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToInt16(System.Object)">
+            <summary>
+            将对象实例转换为Int16（Convert object instance to Int16）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToInt32(System.Object)">
+            <summary>
+            将对象实例转换为Int32（Convert object instance to Int32）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToInt64(System.Object)">
+            <summary>
+            将对象实例转换为Int64（Convert object instance to Int64）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToDecimal(System.Object)">
+            <summary>
+            将对象实例转换为Decimal（Convert object instance to Decimal）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToDouble(System.Object)">
+            <summary>
+            将对象实例转换为Double（Convert object instance to Double）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToSingle(System.Object)">
+            <summary>
+            将对象实例转换为float（Convert object instance to float）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToBoolean(System.Object)">
+            <summary>
+            将对象实例转换为Boolean（Convert object instance to Boolean）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtObject.TryToDateTime(System.Object)">
+            <summary>
+            将对象实例转换为DateTime（Convert object instance to DateTime）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.ExtString">
+            <summary>
+            字符串扩展（String Extension）
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtString.ToEmptyIfNull(System.String)">
+            <summary>
+            如果当前字符串实例为null，则将其转换为string.Empty（If the current string instance is null, it is converted to string.Empty）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtString.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            指示当前字符串实例是null、空还是仅由空格字符组成（Indicates whether the current string instance is null, empty, or only composed of space characters）
+            </summary>
+            <param name="value">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.DateTimeHelper">
+            <summary>
+            时间帮助类（DateTime Helper）
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.DateTimeHelper.DateTimeToTimeStamp(System.DateTime,ZHI.ZSystem.TimeStampUnit)">
+            <summary>
+            时间转为时间戳（datetime to timestamp）
+            </summary>
+            <param name="value">时间</param>
+            <param name="unit">单位</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.DateTimeHelper.TimeStampToDateTime(System.String)">
+            <summary>
+            时间戳转为时间（timestamp to datetime）
+            </summary>
+            <param name="value">时间戳</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.EncodeHelper">
+            <summary>
+            编码帮助类（Encode Helper）
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.EncodeHelper.Base64Encode(System.String)">
+            <summary>
+            将字符串转换成base64格式,使用UTF8字符集（Use utf8 character set to convert string to Base64 format）
+            </summary>
+            <param name="input">编码字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncodeHelper.Base64Decode(System.String)">
+            <summary>
+            将base64格式字符串，转换UTF8字符集（Extracting Base64 string content with utf8 character set）
+            </summary>
+            <param name="input">解码字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.EncryptHelper">
+            <summary>
+            加密帮助类（Encrypt Helper）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.EncryptHelper._aes_key_size_array">
+            <summary>
+            AES KEY 长度（位）
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.MD5ComputeHash(System.String,System.Text.Encoding)">
+            <summary>
+            MD5计算指定字符串哈希值
+            </summary>
+            <param name="input"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.MD5EncryptTo16(System.String)">
+            <summary>
+            MD5加密字符串并得到32位的结果（MD5 encrypts the string and gets a 32-bit result）
+            </summary>
+            <param name="input">加密字符串</param>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.MD5EncryptTo32(System.String)">
+            <summary>
+            MD5加密字符串并得到16位的结果（MD5 encrypts the string and gets a 16-bit result）
+            </summary>
+            <param name="input">加密字符串</param>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.AESGenerateKey(System.Int32)">
+            <summary>
+            生成AES KEY（Generate AES KEY）
+            </summary>
+            <param name="keySize">AES KEY 长度（128-bit、192-bit、256-bit）</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.AESGenerateIV">
+            <summary>
+            生成AES IV（Generate AES IV）
+            </summary>
+            <returns>16字节长度字符串（a 16 byte string）</returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.AESEncryptToBtyes(System.String,System.String,System.String,ZHI.ZSystem.AesCipherMode,ZHI.ZSystem.AesPaddingMode)">
+            <summary>
+            AES加密字符串并获取字节数组结果（AES encrypts the string and gets the byte array result）
+            </summary>
+            <param name="input">加密字符串</param>
+            <param name="key">AES KEY</param>
+            <param name="iv">AES IV</param>
+            <param name="cipherMode">密码模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.AESEncryptToBase64(System.String,System.String,System.String,ZHI.ZSystem.AesCipherMode,ZHI.ZSystem.AesPaddingMode)">
+            <summary>
+            AES加密字符串并获得base64字符串结果（AES encrypts the string and gets the base64 string result）
+            </summary>
+            <param name="input">加密字符串</param>
+            <param name="key">AES KEY</param>
+            <param name="iv">AES IV</param>
+            <param name="cipherMode">密码模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.AESEncryptToHex(System.String,System.String,System.String,ZHI.ZSystem.AesCipherMode,ZHI.ZSystem.AesPaddingMode)">
+            <summary>
+            AES加密字符串并获得十六进制字符串结果（AES encrypts the string and gets the hex string result）
+            </summary>
+            <param name="input">加密字符串</param>
+            <param name="key">AES KEY</param>
+            <param name="iv">AES IV</param>
+            <param name="cipherMode">密码模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.AESDecryptFromBytes(System.Byte[],System.String,System.String,ZHI.ZSystem.AesCipherMode,ZHI.ZSystem.AesPaddingMode)">
+            <summary>
+            AES解密字节数组并获得结果（AES decrypts the byte array and gets the result）
+            </summary>
+            <param name="input">字节数组</param>
+            <param name="key">AES KEY</param>
+            <param name="iv">AES IV</param>
+            <param name="cipherMode">密码模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.AESDecryptFromHex(System.String,System.String,System.String,ZHI.ZSystem.AesCipherMode,ZHI.ZSystem.AesPaddingMode)">
+            <summary>
+            AES解密十六进制字符串并获得结果（AES decrypts the hex string and gets the result）
+            </summary>
+            <param name="input">解密字符串</param>
+            <param name="key">AES KEY</param>
+            <param name="iv">AES IV</param>
+            <param name="cipherMode">密码模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.AESDecryptFromBase64(System.String,System.String,System.String,ZHI.ZSystem.AesCipherMode,ZHI.ZSystem.AesPaddingMode)">
+            <summary>
+            AES解密base64字符串并获得结果（AES decrypts the base64 string and gets the result）
+            </summary>
+            <param name="input">解密字符串</param>
+            <param name="key">AES KEY</param>
+            <param name="iv">AES IV</param>
+            <param name="cipherMode">密码模式</param>
+            <param name="paddingMode">填充模式</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.HttpHelper">
+            <summary>
+            Http帮助类（Http Helper）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.HttpHelper._defaultTimeOut">
+            <summary>
+            默认超时时间（Default Timeout）
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.CertificateValidation(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            证书验证
+            </summary>
+            <param name="sender"></param>
+            <param name="x509Certificate">提供使用 X.509 v.3 证书的方法</param>
+            <param name="x509Chain">表示 X509Certificate2 证书的链生成引擎</param>
+            <param name="sslPolicyErrors">枚举安全套接字层 (SSL) 策略错误</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpPostAsync(System.String,System.String)">
+            <summary>
+            异步发起HTTP POST请求（Launch HTTP POST request async）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="body">请求内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpPostAsync(System.String,System.String,System.String)">
+            <summary>
+            异步发起HTTP POST请求（Launch HTTP POST request async）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="body">请求内容</param>
+            <param name="contentType">内容类型（请求头：Content-Type）</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpPostAsync(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            异步发起HTTP POST请求（Launch HTTP POST request async）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="body">请求内容</param>
+            <param name="contentType">内容类型（请求头：Content-Type）</param>
+            <param name="headers">请求头</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpPostAsync(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">
+            <summary>
+            异步发起HTTP POST请求（Launch HTTP POST request async）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="body">请求内容</param>
+            <param name="contentType">内容类型（请求头：Content-Type）</param>
+            <param name="headers">请求头</param>
+            <param name="timeOut">超时时间（秒）</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpGetAsync(System.String)">
+            <summary>
+            异步发起HTTP GET请求（Launch HTTP GET request async）
+            </summary>
+            <param name="url">请求地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpGetAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            异步发起HTTP GET请求（Launch HTTP GET request async）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="headers">请求内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpGetAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">
+            <summary>
+            异步发起HTTP GET请求（Launch HTTP GET request async）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="headers">请求内容</param>
+            <param name="timeOut">超时时间（秒）</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpGet(System.String)">
+            <summary>
+            同步发起HTTP GET请求（Launch HTTP GET request sync）
+            </summary>
+            <param name="url">请求地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpGet(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            同步发起HTTP GET请求（Launch HTTP GET request sync）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="headers">请求内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpGet(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">
+            <summary>
+            同步发起HTTP GET请求（Launch HTTP GET request sync）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="headers">请求内容</param>
+            <param name="timeOut">超时时间（秒）</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpPost(System.String,System.String)">
+            <summary>
+            同步发起HTTP POST请求（Launch HTTP POST request sync）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="body">请求内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpPost(System.String,System.String,System.String)">
+            <summary>
+            同步发起HTTP POST请求（Launch HTTP POST request sync）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="body">请求内容</param>
+            <param name="contentType">内容类型（请求头：Content-Type）</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpPost(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            同步发起HTTP POST请求（Launch HTTP POST request sync）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="body">请求内容</param>
+            <param name="contentType">内容类型（请求头：Content-Type）</param>
+            <param name="headers">请求头</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.HttpHelper.HttpPost(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">
+            <summary>
+            同步发起HTTP POST请求（Launch HTTP POST request sync）
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="body">请求内容</param>
+            <param name="contentType">内容类型（请求头：Content-Type）</param>
+            <param name="headers">请求头</param>
+            <param name="timeOut">超时时间（秒）</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.IPHelper">
+            <summary>
+            IP帮助类（IP Helper）
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.IPHelper.IpToLong(System.String)">
+            <summary>
+            将IP地址转换为Int64（Convert IP address to Int64）
+            </summary>
+            <param name="ip">ip</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.IPHelper.LongToIp(System.Int64)">
+            <summary>
+            将Int64转换为IP地址（Convert Int64 to IP address）
+            </summary>
+            <param name="ip">ip</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.StringHelper">
+            <summary>
+            字符串帮助类（StringHelper）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.StringHelper._number_string">
+            <summary>
+            数字
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.StringHelper._character_string">
+            <summary>
+            英文
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.StringHelper._mixed_string">
+            <summary>
+            数字及英文
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.CreateRandomNumberString(System.Int32)">
+            <summary>
+            生成随机字符串（数字）（Generate random strings (numbers)）
+            </summary>
+            <param name="length">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.CreateCharacterNumberString(System.Int32)">
+            <summary>
+            生成随机字符串（字符）（Generate random strings (characters)）
+            </summary>
+            <param name="length">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.CreateRandomString(System.Int32)">
+            <summary>
+            生成随机字符串（Generate random strings）
+            </summary>
+            <param name="length">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.CreateRandomString(System.Int32,System.Int32)">
+            <summary>
+            生成随机字符串（Generate random strings）
+            </summary>
+            <param name="minlength">最小长度</param>
+            <param name="maxlength">最大长度</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.ZConvert">
+            <summary>
+            数据转换类（data conversion class）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.ZConvert._unix_init_time">
+            <summary>
+            时间戳起始时间
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToBase64Encode(System.String)">
+            <summary>
+            字符串转为Base64字符串（From string to base64 string）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToBase64Decode(System.String)">
+            <summary>
+            Base64字符串转为字符串（From Base64 string to string）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToDateTimeFromTimeStamp(System.Int64)">
+            <summary>
+            时间戳转为时间（From timestamp to datetime）
+            </summary>
+            <param name="value">时间戳</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToDateTimeFromTimeStamp(System.String)">
+            <summary>
+            时间戳转为时间（From timestamp to datetime）
+            </summary>
+            <param name="value">时间戳</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToIntFromEnum(System.Enum)">
+            <summary>
+            枚举转为Int32（From enum to int32）
+            </summary>
+            <param name="value">枚举</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToLongFromIp(System.String)">
+            <summary>
+            IP地址转换为Int64（From IP address to Int64）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToIpFromLong(System.Int64)">
+            <summary>
+            Int64转换为IP地址（From Int64 to IP address）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToTimeStampFromDateTime(System.DateTime,ZHI.ZSystem.TimeStampUnit)">
+            <summary>
+            时间转为时间戳（From datetime to timestamp）
+            </summary>
+            <param name="value">时间</param>
+            <param name="unit">精确单位</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToBase64Encode(System.String)">
+            <summary>
+            字符串转为Base64字符串（From string to base64 string）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToBase64Decode(System.String)">
+            <summary>
+            Base64字符串转为字符串（From Base64 string to string）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToBoolean(System.Object)">
+            <summary>
+            将对象实例转换为Boolean（Convert object instance to Boolean）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToDateTime(System.Object)">
+            <summary>
+            将对象实例转换为DateTime（Convert object instance to DateTime）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToDateTimeFromTimeStamp(System.Int64)">
+            <summary>
+            时间戳转为时间（From timestamp to datetime）
+            </summary>
+            <param name="value">时间戳</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToDateTimeFromTimeStamp(System.String)">
+            <summary>
+            时间戳转为时间（From timestamp to datetime）
+            </summary>
+            <param name="value">时间戳</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToDecimal(System.Object)">
+            <summary>
+            将对象实例转换为Decimal（Convert object instance to Decimal）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToDouble(System.Object)">
+            <summary>
+            将对象实例转换为Double（Convert object instance to Double）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToLongFromIp(System.String)">
+            <summary>
+            IP地址转换为Int64（From IP address to Int64）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToInt16(System.Object)">
+            <summary>
+            将对象实例转换为Int16（Convert object instance to Int16）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToInt32(System.Object)">
+            <summary>
+            将对象实例转换为Int32（Convert object instance to Int32）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToInt64(System.Object)">
+            <summary>
+            将对象实例转换为Int64（Convert object instance to Int64）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToIpFromLong(System.Int64)">
+            <summary>
+            Int64转换为IP地址（From Int64 to IP address）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToSingle(System.Object)">
+            <summary>
+            将对象实例转换为float（Convert object instance to float）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToTimeStampFromDateTime(System.DateTime,ZHI.ZSystem.TimeStampUnit)">
+            <summary>
+            时间转为时间戳（From datetime to timestamp）
+            </summary>
+            <param name="value">时间</param>
+            <param name="unit">精确单位</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToUInt16(System.Object)">
+            <summary>
+            将对象实例转换为UInt16（Convert object instance to UInt16）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToUInt32(System.Object)">
+            <summary>
+            将对象实例转换为UInt32（Convert object instance to UInt32）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToUInt64(System.Object)">
+            <summary>
+            将对象实例转换为UInt64（Convert object instance to UInt64）
+            </summary>
+            <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.ZObject">
+            <summary>
+            基类
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.ZObject.ToJson">
+            <summary>
+            将当前实例转为JSON字符串
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

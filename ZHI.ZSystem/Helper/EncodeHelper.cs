@@ -16,8 +16,7 @@ namespace ZHI.ZSystem
         /// <returns></returns>
         public static string Base64Encode(string input)
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(input);
-            return Convert.ToBase64String(bytes);
+            return ZConvert.ToBase64Encode(input);
         }
         /// <summary>
         /// 将base64格式字符串，转换UTF8字符集（Extracting Base64 string content with utf8 character set）
@@ -26,8 +25,7 @@ namespace ZHI.ZSystem
         /// <returns></returns>
         public static string Base64Decode(string input)
         {
-            byte[] bytes = Convert.FromBase64String(input);
-            return Encoding.UTF8.GetString(bytes);
+            return ZConvert.ToBase64Decode(input);
         }
         #endregion
     }

@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30709.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZHI.ZSystem", "ZHI.ZSystem\ZHI.ZSystem.csproj", "{501CCFC7-4275-4043-8EA5-917C8E8BEBAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZHI.ZSystem.NetFramework.Unit", "ZHI.ZSystem.NetFramework.Unit\ZHI.ZSystem.NetFramework.Unit.csproj", "{38F02A3E-4F00-4BF8-A202-5322A095C7E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZHI.ZSystem.Net40.Unit", "ZHI.ZSystem.Net40.Unit\ZHI.ZSystem.Net40.Unit.csproj", "{6F520681-E5D4-4363-A0DA-76F6E16FE182}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZHI.ZSystem.NUnit", "ZHI.ZSystem.NUnit\ZHI.ZSystem.NUnit.csproj", "{EDB4E038-FAC3-4F73-847C-E3E0F6750954}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZHI.ZSystem.NetCore.Unit", "ZHI.ZSystem.NetCore.Unit\ZHI.ZSystem.NetCore.Unit.csproj", "{CCB78CC7-0E72-4E87-A43F-82D3B8CFF5C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZHI.ZSystem.Net45.Unit", "ZHI.ZSystem.Net45.Unit\ZHI.ZSystem.Net45.Unit.csproj", "{38F02A3E-4F00-4BF8-A202-5322A095C7E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,20 +21,24 @@ Global
 		{501CCFC7-4275-4043-8EA5-917C8E8BEBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{501CCFC7-4275-4043-8EA5-917C8E8BEBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{501CCFC7-4275-4043-8EA5-917C8E8BEBAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F520681-E5D4-4363-A0DA-76F6E16FE182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F520681-E5D4-4363-A0DA-76F6E16FE182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F520681-E5D4-4363-A0DA-76F6E16FE182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F520681-E5D4-4363-A0DA-76F6E16FE182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCB78CC7-0E72-4E87-A43F-82D3B8CFF5C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB78CC7-0E72-4E87-A43F-82D3B8CFF5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB78CC7-0E72-4E87-A43F-82D3B8CFF5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB78CC7-0E72-4E87-A43F-82D3B8CFF5C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{38F02A3E-4F00-4BF8-A202-5322A095C7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{38F02A3E-4F00-4BF8-A202-5322A095C7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38F02A3E-4F00-4BF8-A202-5322A095C7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38F02A3E-4F00-4BF8-A202-5322A095C7E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EDB4E038-FAC3-4F73-847C-E3E0F6750954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDB4E038-FAC3-4F73-847C-E3E0F6750954}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDB4E038-FAC3-4F73-847C-E3E0F6750954}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDB4E038-FAC3-4F73-847C-E3E0F6750954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {8037C773-70F0-4C8C-86CE-8CD8482D4AE7}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal
