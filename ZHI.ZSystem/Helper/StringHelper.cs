@@ -31,7 +31,7 @@ namespace ZHI.ZSystem
         public static string CreateRandomNumberString(int length)
         {
             var builder = new StringBuilder();
-            var random = new Random();
+            var random = new Random(Guid.NewGuid().GetHashCode());
             for (int index = 0; index < length; index++)
             {
                 var charIndex = random.Next(0, _number_string.Length);
@@ -47,7 +47,7 @@ namespace ZHI.ZSystem
         public static string CreateCharacterNumberString(int length)
         {
             var builder = new StringBuilder();
-            var random = new Random();
+            var random = new Random(Guid.NewGuid().GetHashCode());
             for (int index = 0; index < length; index++)
             {
                 var charIndex = random.Next(0, _character_string.Length);
@@ -63,7 +63,7 @@ namespace ZHI.ZSystem
         public static string CreateRandomString(int length)
         {
             var builder = new StringBuilder();
-            var random = new Random();
+            var random = new Random(Guid.NewGuid().GetHashCode());
             for (int index = 0; index < length; index++)
             {
                 var charIndex = random.Next(0, _mixed_string.Length);
@@ -80,7 +80,7 @@ namespace ZHI.ZSystem
         public static string CreateRandomString(int minlength, int maxlength)
         {
             var builder = new StringBuilder();
-            var random = new Random();
+            var random = new Random(Guid.NewGuid().GetHashCode());
             for (int index = minlength; index < maxlength; index++)
             {
                 var charIndex = random.Next(0, _mixed_string.Length);

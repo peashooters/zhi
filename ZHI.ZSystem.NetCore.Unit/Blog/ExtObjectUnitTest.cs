@@ -41,12 +41,12 @@ namespace ZHI.ZSystem.NetCore.Unit.Blog
             }
 
             //使用ZHI.ZSystem以后的写法
-            //var value = character.ToInt32();
-            //if (value.HasValue)
-            //{
-            //    //character是数字的业务逻辑
-            //    //...
-            //}
+            var value = character.TryToInt32();
+            if (value.HasValue)
+            {
+                //character是数字的业务逻辑
+                //...
+            }
         }
     }
 }

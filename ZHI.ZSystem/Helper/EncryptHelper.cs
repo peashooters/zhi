@@ -36,7 +36,7 @@ namespace ZHI.ZSystem
 
         #region ====MD5
         /// <summary>
-        /// MD5加密字符串并得到32位的结果（MD5 encrypts the string and gets a 32-bit result）
+        /// MD5加密字符串并得到16位的结果（MD5 encrypts the string and gets a 16 byte result）
         /// </summary>
         /// <param name="input">加密字符串</param>
         public static string MD5EncryptTo16(string input)
@@ -45,7 +45,7 @@ namespace ZHI.ZSystem
             return ciphertext.Substring(8,16);
         }
         /// <summary>
-        /// MD5加密字符串并得到16位的结果（MD5 encrypts the string and gets a 16-bit result）
+        /// MD5加密字符串并得到32位的结果（MD5 encrypts the string and gets a 32 byte result）
         /// </summary>
         /// <param name="input">加密字符串</param>
         public static string MD5EncryptTo32(string input)
@@ -59,6 +59,15 @@ namespace ZHI.ZSystem
         #endregion
 
         #region ====AES
+        /// <summary>
+        /// 生成AES KEY（Generate AES KEY）
+        /// </summary>
+        /// <param name="keySize">AES KEY 长度（128-bit、192-bit、256-bit）</param>
+        /// <returns></returns>
+        public static string AESGenerateKey(AesKeySize keySize)
+        {
+            return AESGenerateKey(keySize.ToInt());
+        }
         /// <summary>
         /// 生成AES KEY（Generate AES KEY）
         /// </summary>

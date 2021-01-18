@@ -61,14 +61,34 @@ namespace ZHI.ZSystem.NetCore.Unit.Helper
 
         public void AES_Example_KEY_IV()
         {
+            //Console.WriteLine("执行函数 AES_Example_KEY_IV()：");
+            //var aes_key_128_bit = EncryptHelper.AESGenerateKey(128);
+            //var aes_key_192_bit = EncryptHelper.AESGenerateKey(192);
+            //var aes_key_256_bit = EncryptHelper.AESGenerateKey(256);
+            //var aes_iv = EncryptHelper.AESGenerateIV();
+            //Console.WriteLine("生成128-bit AES Key：{0}", aes_key_128_bit);
+            //Console.WriteLine("生成192-bit AES Key：{0}", aes_key_192_bit);
+            //Console.WriteLine("生成256-bit AES Key：{0}", aes_key_256_bit);
+            //Console.WriteLine("生成AES IV：{0}", aes_iv);
             Console.WriteLine("执行函数 AES_Example_KEY_IV()：");
+            //AES KEY 
             var aes_key_128_bit = EncryptHelper.AESGenerateKey(128);
             var aes_key_192_bit = EncryptHelper.AESGenerateKey(192);
             var aes_key_256_bit = EncryptHelper.AESGenerateKey(256);
-            var aes_iv = EncryptHelper.AESGenerateIV();
             Console.WriteLine("生成128-bit AES Key：{0}", aes_key_128_bit);
             Console.WriteLine("生成192-bit AES Key：{0}", aes_key_192_bit);
             Console.WriteLine("生成256-bit AES Key：{0}", aes_key_256_bit);
+            Console.WriteLine();
+            //AES KEY BY ENUM
+            aes_key_128_bit = EncryptHelper.AESGenerateKey(AesKeySize.len128);
+            aes_key_192_bit = EncryptHelper.AESGenerateKey(AesKeySize.len192);
+            aes_key_256_bit = EncryptHelper.AESGenerateKey(AesKeySize.len256);
+            Console.WriteLine("生成128-bit AES Key：{0}", aes_key_128_bit);
+            Console.WriteLine("生成192-bit AES Key：{0}", aes_key_192_bit);
+            Console.WriteLine("生成256-bit AES Key：{0}", aes_key_256_bit);
+            Console.WriteLine();
+            //AES IV
+            var aes_iv = EncryptHelper.AESGenerateIV();
             Console.WriteLine("生成AES IV：{0}", aes_iv);
         }
         private void AES_Example_CTS()

@@ -10,6 +10,7 @@ namespace ZHI.ZSystem.Net40.Unit
             //MD5_Encrypt();
 
             #region AES
+            AES_Example_KEY_IV();
             //AES_Example_CBC();
             //AES_Example_ECB();
             //AES_Example_OFB();
@@ -24,6 +25,30 @@ namespace ZHI.ZSystem.Net40.Unit
             var empty = string.Empty;
             Console.WriteLine("MD5EncryptTo16：{0}", EncryptHelper.MD5EncryptTo16(empty));
             Console.WriteLine("MD5EncryptTo32：{0}", EncryptHelper.MD5EncryptTo32(empty));
+        }
+
+        public void AES_Example_KEY_IV()
+        {
+            Console.WriteLine("执行函数 AES_Example_KEY_IV()：");
+            //AES KEY 
+            var aes_key_128_bit = EncryptHelper.AESGenerateKey(128);
+            var aes_key_192_bit = EncryptHelper.AESGenerateKey(192);
+            var aes_key_256_bit = EncryptHelper.AESGenerateKey(256);
+            Console.WriteLine("生成128-bit AES Key：{0}", aes_key_128_bit);
+            Console.WriteLine("生成192-bit AES Key：{0}", aes_key_192_bit);
+            Console.WriteLine("生成256-bit AES Key：{0}", aes_key_256_bit);
+            Console.WriteLine();
+            //AES KEY BY ENUM
+            aes_key_128_bit = EncryptHelper.AESGenerateKey(AesKeySize.len128);
+            aes_key_192_bit = EncryptHelper.AESGenerateKey(AesKeySize.len192);
+            aes_key_256_bit = EncryptHelper.AESGenerateKey(AesKeySize.len256);
+            Console.WriteLine("生成128-bit AES Key：{0}", aes_key_128_bit);
+            Console.WriteLine("生成192-bit AES Key：{0}", aes_key_192_bit);
+            Console.WriteLine("生成256-bit AES Key：{0}", aes_key_256_bit);
+            Console.WriteLine();
+            //AES IV
+            var aes_iv = EncryptHelper.AESGenerateIV();
+            Console.WriteLine("生成AES IV：{0}", aes_iv);
         }
 
         private void AES_Example_CTS()

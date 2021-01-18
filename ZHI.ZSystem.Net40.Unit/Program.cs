@@ -14,6 +14,7 @@ namespace ZHI.ZSystem.Net40.Unit
             var unitTestInstance = type.Assembly.CreateInstance(type.FullName) as BaseUnitTest;
             unitTestInstance.Start();
             //
+            Console.WriteLine();
             Console.WriteLine("请按任意键继续...");
             Console.ReadKey();
 

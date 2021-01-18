@@ -14,8 +14,11 @@ namespace ZHI.ZSystem.Net40.Unit
             timestamp = DateTimeHelper.DateTimeToTimeStamp(time,TimeStampUnit.Millisecond);
             Console.WriteLine("DateTimeToTimeStamp Millisecond：{0}", timestamp);
             //
-            var datetime = DateTimeHelper.TimeStampToDateTime(timestamp.ToString());
-            Console.WriteLine("TimeStampToDateTime：{0}", datetime);
+            var datetime1 = DateTimeHelper.TimeStampToDateTime(timestamp);
+            Console.WriteLine("TimeStampToDateTime：{0}", datetime1);
+            //
+            var datetime2 = DateTimeHelper.TimeStampToDateTime(timestamp.ToString());
+            Console.WriteLine("TimeStampToDateTime：{0}", datetime2);
         }
     }
 }

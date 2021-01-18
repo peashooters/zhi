@@ -14,12 +14,29 @@ namespace ZHI.ZSystem.Net45.Unit.Helper
         public void Test()
         {
             var time = DateTime.Now;
-            //
-            var timestamp = DateTimeHelper.DateTimeToTimeStamp(time);
-            Console.WriteLine("DateTimeToTimeStamp：{0}", timestamp);
-            //
-            var datetime = DateTimeHelper.TimeStampToDateTime(timestamp.ToString());
-            Console.WriteLine("TimeStampToDateTime：{0}", datetime);
+
+            long timeStamp=DateTimeHelper.DateTimeToTimeStamp(time);
+            Console.WriteLine("DateTimeToTimeStamp(不指定单位)：{0}", timeStamp);
+
+            DateTime dt= DateTimeHelper.TimeStampToDateTime(timeStamp);
+            Console.WriteLine("TimeStampToDateTime(一般)：{0}", dt);
+
+            timeStamp = DateTimeHelper.DateTimeToTimeStamp(time, TimeStampUnit.Millisecond);
+            Console.WriteLine("DateTimeToTimeStamp(指定单位 ms)：{0}", timeStamp);
+
+            dt = DateTimeHelper.TimeStampToDateTime(timeStamp);
+            Console.WriteLine("TimeStampToDateTime(指定单位 ms)：{0}", dt);
+
+            timeStamp = DateTimeHelper.DateTimeToTimeStamp(time, TimeStampUnit.Second);
+            Console.WriteLine("DateTimeToTimeStamp(指定单位 s)：{0}", timeStamp);
+
+            dt = DateTimeHelper.TimeStampToDateTime(timeStamp);
+            Console.WriteLine("TimeStampToDateTime(指定单位 s)：{0}", dt);
+
+            dt = DateTimeHelper.TimeStampToDateTime("987654321");
+            Console.WriteLine("TimeStampToDateTime(长整数字符串)：{0}", dt);
+
+            //Console.WriteLine("DateTimeToTimeStamp默认单位到秒");
         }
     }
 }

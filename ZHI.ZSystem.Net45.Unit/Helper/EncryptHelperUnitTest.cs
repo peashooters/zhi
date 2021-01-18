@@ -31,15 +31,38 @@ namespace ZHI.ZSystem.Net45.Unit.Helper
             //####缺点：CTR加密模式下，IV只支持0~15byte长度。不支持nopadding（当iv在8byte~15byte的长度之间时，作者的工具类能与它的加密结果一致 ）
             //####
             //####注：没有一个网站能完全与本工具库的加密结果完全匹配，但是以上工具网站中，至少能找到一个与本工具库加密结果完全相同的算法模式与填充模式
-            AES_Example_CBC();
+            //AES_Example_CBC();
             //AES_Example_ECB();
             //AES_Example_OFB();
             //AES_Example_CFB();
             //AES_Example_CTR();
             //AES_Example_CTS();
+            AES_Example_KEY_IV();
             #endregion
         }
-
+        public void AES_Example_KEY_IV()
+        {
+            Console.WriteLine("执行函数 AES_Example_KEY_IV()：");
+            //AES KEY 
+            var aes_key_128_bit = EncryptHelper.AESGenerateKey(128);
+            var aes_key_192_bit = EncryptHelper.AESGenerateKey(192);
+            var aes_key_256_bit = EncryptHelper.AESGenerateKey(256);
+            Console.WriteLine("生成128-bit AES Key：{0}", aes_key_128_bit);
+            Console.WriteLine("生成192-bit AES Key：{0}", aes_key_192_bit);
+            Console.WriteLine("生成256-bit AES Key：{0}", aes_key_256_bit);
+            Console.WriteLine();
+            //AES KEY BY ENUM
+            aes_key_128_bit = EncryptHelper.AESGenerateKey(AesKeySize.len128);
+            aes_key_192_bit = EncryptHelper.AESGenerateKey(AesKeySize.len192);
+            aes_key_256_bit = EncryptHelper.AESGenerateKey(AesKeySize.len256);
+            Console.WriteLine("生成128-bit AES Key：{0}", aes_key_128_bit);
+            Console.WriteLine("生成192-bit AES Key：{0}", aes_key_192_bit);
+            Console.WriteLine("生成256-bit AES Key：{0}", aes_key_256_bit);
+            Console.WriteLine();
+            //AES IV
+            var aes_iv = EncryptHelper.AESGenerateIV();
+            Console.WriteLine("生成AES IV：{0}", aes_iv);
+        }
         private void MD5_Encrypt()
         {
             var empty = string.Empty;

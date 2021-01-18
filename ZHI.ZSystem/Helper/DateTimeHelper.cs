@@ -22,6 +22,15 @@ namespace ZHI.ZSystem
         /// </summary>
         /// <param name="value">时间戳</param>
         /// <returns></returns>
+        public static DateTime TimeStampToDateTime(long value)
+        {
+            return ZConvert.ToDateTimeFromTimeStamp(value);
+        }
+        /// <summary>
+        /// 时间戳转为时间（timestamp to datetime）
+        /// </summary>
+        /// <param name="value">时间戳</param>
+        /// <returns></returns>
         public static DateTime TimeStampToDateTime(string value)
         {
             return ZConvert.ToDateTimeFromTimeStamp(value);

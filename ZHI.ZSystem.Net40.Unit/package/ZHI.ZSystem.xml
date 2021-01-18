@@ -39,6 +39,26 @@
             
             </summary>
         </member>
+        <member name="T:ZHI.ZSystem.AesKeySize">
+            <summary>
+            AES 密钥长度（bit）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesKeySize.len128">
+            <summary>
+            128位（128-bit）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesKeySize.len192">
+            <summary>
+            192位（192-bit）
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.AesKeySize.len256">
+            <summary>
+            256位（256-bit）
+            </summary>
+        </member>
         <member name="T:ZHI.ZSystem.AesPaddingMode">
             <summary>
             AES 填充模式
@@ -312,6 +332,13 @@
             <param name="unit">单位</param>
             <returns></returns>
         </member>
+        <member name="M:ZHI.ZSystem.DateTimeHelper.TimeStampToDateTime(System.Int64)">
+            <summary>
+            时间戳转为时间（timestamp to datetime）
+            </summary>
+            <param name="value">时间戳</param>
+            <returns></returns>
+        </member>
         <member name="M:ZHI.ZSystem.DateTimeHelper.TimeStampToDateTime(System.String)">
             <summary>
             时间戳转为时间（timestamp to datetime）
@@ -358,15 +385,22 @@
         </member>
         <member name="M:ZHI.ZSystem.EncryptHelper.MD5EncryptTo16(System.String)">
             <summary>
-            MD5加密字符串并得到32位的结果（MD5 encrypts the string and gets a 32-bit result）
+            MD5加密字符串并得到16位的结果（MD5 encrypts the string and gets a 16 byte result）
             </summary>
             <param name="input">加密字符串</param>
         </member>
         <member name="M:ZHI.ZSystem.EncryptHelper.MD5EncryptTo32(System.String)">
             <summary>
-            MD5加密字符串并得到16位的结果（MD5 encrypts the string and gets a 16-bit result）
+            MD5加密字符串并得到32位的结果（MD5 encrypts the string and gets a 32 byte result）
             </summary>
             <param name="input">加密字符串</param>
+        </member>
+        <member name="M:ZHI.ZSystem.EncryptHelper.AESGenerateKey(ZHI.ZSystem.AesKeySize)">
+            <summary>
+            生成AES KEY（Generate AES KEY）
+            </summary>
+            <param name="keySize">AES KEY 长度（128-bit、192-bit、256-bit）</param>
+            <returns></returns>
         </member>
         <member name="M:ZHI.ZSystem.EncryptHelper.AESGenerateKey(System.Int32)">
             <summary>
