@@ -8,4 +8,4 @@ QQ技术群：735837718
 
 欢迎提需求或报BUG~
 
-## 快速上手（国内文档）：http://peashooters.gitee.io/zhi-doc
+### 快速上手（国内文档）：http://peashooters.gitee.io/zhi-doc
