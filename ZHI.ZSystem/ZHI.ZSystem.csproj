@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;NET40;NET45</TargetFrameworks>
-    <Version>2.0.2</Version>
+    <Version>2.0.3</Version>
     <Authors>peashooters</Authors>
     <Company>peashooters</Company>
     <Product>ZHI框架组件</Product>
     <Description>【ZHI框架组件】工具库组件</Description>
     <NeutralLanguage></NeutralLanguage>
-    <AssemblyVersion>2.0.2.0</AssemblyVersion>
-    <FileVersion>2.0.2.0</FileVersion>
+    <AssemblyVersion>2.0.3.0</AssemblyVersion>
+    <FileVersion>2.0.3.0</FileVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>ZHI,ZHI.ZSystem</PackageTags>

@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>IDE0051;IDE0059</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -80,6 +81,7 @@
     <Compile Include="Helper\EncryptHelperUnitTest.cs" />
     <Compile Include="Helper\HttpHelperUnitTest.cs" />
     <Compile Include="Helper\IPHelperUnitTest.cs" />
+    <Compile Include="Helper\MapHelperUnitTest.cs" />
     <Compile Include="Helper\StringHelperUnitTest.cs" />
     <Compile Include="Object\ZConvertUnitTest.cs" />
     <Compile Include="Program.cs" />

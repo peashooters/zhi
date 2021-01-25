@@ -76,12 +76,12 @@ namespace ZHI.ZSystem
         public static string AESGenerateKey(int keySize = 128)
         {
             if (!_aes_key_size_array.Contains(keySize))
-                throw new ArgumentOutOfRangeException("指定的密钥长度不被允许，仅允许生成128位、192位、256位的AES KEY（The specified key length is not allowed. Only 128 bit, 192 bit and 256 bit AES key can be generated）");
+                throw new ArgumentOutOfRangeException(paramName:nameof(keySize),"指定的密钥长度不被允许，仅允许生成128位、192位、256位的AES KEY（The specified key length is not allowed. Only 128 bit, 192 bit and 256 bit AES key can be generated）");
             
             //1英文字符占1byte = 8bit
             var bytelen = keySize / 8;
 
-            var key = StringHelper.CreateRandomString(bytelen);
+            var key = StringHelper.GenerateRandomString(bytelen);
 
             return key;
         }
@@ -91,7 +91,7 @@ namespace ZHI.ZSystem
         /// <returns>16字节长度字符串（a 16 byte string）</returns>
         public static string AESGenerateIV()
         {
-            var iv = StringHelper.CreateRandomString(16);
+            var iv = StringHelper.GenerateRandomString(16);
             return iv;
         }
         /// <summary>

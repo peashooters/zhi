@@ -24,7 +24,7 @@ namespace ZHI.ZSystem.Net45.Unit.Helper
             //发起POST请求
             string url = "https://fanyi.baidu.com/langdetect";
             //string gurl = "https://www.baidu.com/";
-            Dictionary<string, string> header = new Dictionary<string, string>();
+            var header = new Dictionary<string, string>();
             //请求头
             header.Add("method", "get");
             header.Add("path", "/langdetect");

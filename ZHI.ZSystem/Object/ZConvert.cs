@@ -111,6 +111,43 @@ namespace ZHI.ZSystem
         {
             return value.ToUtcTimeStamp(unit);
         }
+        /// <summary>
+        /// 字符串转为Unicode字符串（From string to unicode string）
+        /// </summary>
+        /// <param name="value">字符串</param>
+        /// <returns></returns>
+        public static string ToUnicodeEncode(string value)
+        {
+            var charArray = value.ToCharArray();
+            var builder = new StringBuilder();
+            byte[] bytes;
+            for (int index = 0; index < charArray.Length; index++)
+            {
+                bytes = Encoding.Unicode.GetBytes(charArray[index].ToString());
+                builder.Append(string.Format("\\u{0:X2}{1:X2}", bytes[1], bytes[0]));
+            }
+            return builder.ToString();
+        }
+        /// <summary>
+        /// Unicode字符串转为字符串（From unicode string to string）
+        /// </summary>
+        /// <param name="value">字符串</param>
+        /// <returns></returns>
+        public static string ToUnicodeDecode(string value)
+        {
+            var builder = new StringBuilder();
+            var length = value.Length / 6;
+            for (int index = 0; index <= length - 1; index++)
+            {
+                var character = value.Substring(0, 6).Substring(2);
+                value = value.Substring(6);
+                var bytes = new byte[2];
+                bytes[1] = byte.Parse(int.Parse(character.Substring(0, 2), System.Globalization.NumberStyles.HexNumber).ToString());
+                bytes[0] = byte.Parse(int.Parse(character.Substring(2, 2), System.Globalization.NumberStyles.HexNumber).ToString());
+                builder.Append(Encoding.Unicode.GetString(bytes));
+            }
+            return builder.ToString();
+        }
         #endregion
 
         #region ====TryTo
@@ -196,7 +233,6 @@ namespace ZHI.ZSystem
             {
                 return null;
             }
-            
         }
         /// <summary>
         /// 将对象实例转换为Decimal（Convert object instance to Decimal）
@@ -302,7 +338,6 @@ namespace ZHI.ZSystem
             {
                 return null;
             }
-            
         }
         /// <summary>
         /// 将对象实例转换为UInt16（Convert object instance to UInt16）
@@ -330,6 +365,38 @@ namespace ZHI.ZSystem
         public static ulong? TryToUInt64(object value)
         {
             return value.TryToUInt64();
+        }
+        /// <summary>
+        /// 字符串转为Unicode字符串（From string to unicode string）
+        /// </summary>
+        /// <param name="value">字符串</param>
+        /// <returns></returns>
+        public static string TryToUnicodeEncode(string value)
+        {
+            try
+            {
+                return ZConvert.ToUnicodeEncode(value);
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+        /// <summary>
+        /// Unicode字符串转为字符串（From unicode string to string）
+        /// </summary>
+        /// <param name="value">字符串</param>
+        /// <returns></returns>
+        public static string TryToUnicodeDecode(string value)
+        {
+            try
+            {
+                return ZConvert.ToUnicodeDecode(value);
+            }
+            catch
+            {
+                return string.Empty;
+            }
         }
         #endregion
     }

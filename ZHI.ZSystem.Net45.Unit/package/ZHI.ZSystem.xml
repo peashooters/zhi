@@ -309,12 +309,26 @@
             <summary>
             如果当前字符串实例为null，则将其转换为string.Empty（If the current string instance is null, it is converted to string.Empty）
             </summary>
-            <param name="value">对象</param>
+            <param name="value">字符串</param>
             <returns></returns>
         </member>
         <member name="M:ZHI.ZSystem.ExtString.IsNullOrWhiteSpace(System.String)">
             <summary>
             指示当前字符串实例是null、空还是仅由空格字符组成（Indicates whether the current string instance is null, empty, or only composed of space characters）
+            </summary>
+            <param name="value">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtString.HasAnyValue(System.String)">
+            <summary>
+            指示当前字符串中是否存在任何值（Indicates whether any value exists in the current string）
+            </summary>
+            <param name="value">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ExtString.HasNonEmptyValue(System.String)">
+            <summary>
+            指示当前字符串中是否存在非空值（Indicates whether a non null value exists in the current string）
             </summary>
             <param name="value">字符串</param>
             <returns></returns>
@@ -353,16 +367,30 @@
         </member>
         <member name="M:ZHI.ZSystem.EncodeHelper.Base64Encode(System.String)">
             <summary>
-            将字符串转换成base64格式,使用UTF8字符集（Use utf8 character set to convert string to Base64 format）
+            Base64编码字符串（Base64 encoding string）
             </summary>
-            <param name="input">编码字符串</param>
+            <param name="value">编码字符串</param>
             <returns></returns>
         </member>
         <member name="M:ZHI.ZSystem.EncodeHelper.Base64Decode(System.String)">
             <summary>
-            将base64格式字符串，转换UTF8字符集（Extracting Base64 string content with utf8 character set）
+            Base64解码字符串（Base64 decode string）
             </summary>
-            <param name="input">解码字符串</param>
+            <param name="value">解码字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncodeHelper.UnicodeEncode(System.String)">
+            <summary>
+            Unicode编码字符串（Unicode encoding a string）
+            </summary>
+            <param name="value">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.EncodeHelper.UnicodeDecode(System.String)">
+            <summary>
+            Unicode解码字符串（Unicode decode string）
+            </summary>
+            <param name="value">字符串</param>
             <returns></returns>
         </member>
         <member name="T:ZHI.ZSystem.EncryptHelper">
@@ -634,6 +662,33 @@
             <param name="ip">ip</param>
             <returns></returns>
         </member>
+        <member name="T:ZHI.ZSystem.MapHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.MapHelper._earth_radius">
+            <summary>
+            地球半径
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.MapHelper.Arc(System.Double)">
+            <summary>
+            经纬度转化成弧度
+            </summary>
+            <param name="line">经度/纬度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.MapHelper.CalcDistance(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            计算两个经纬坐标的距离（单位：m）（Calculate the distance between two longitude and latitude coordinates（m））
+            </summary>
+            <param name="longitudeA">第一点经度（The longitude of the first point）</param>
+            <param name="latitudeA">第一点纬度（The latitude of the first point）</param>
+            <param name="longitudeB">第二点经度（The longitude of the second point）</param>
+            <param name="latitudeB">第二点纬度（The latitude of the second point）</param>
+            <returns></returns>
+        </member>
         <member name="T:ZHI.ZSystem.StringHelper">
             <summary>
             字符串帮助类（StringHelper）
@@ -654,6 +709,67 @@
             数字及英文
             </summary>
         </member>
+        <member name="M:ZHI.ZSystem.StringHelper.GenerateRandomString(System.String,System.Int32,System.Int32)">
+            <summary>
+            生成随机字符串（Generate random strings）
+            </summary>
+            <param name="seed">随机字符串种子</param>
+            <param name="minlength">最小长度</param>
+            <param name="maxlength">最大长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.GenerateRandomString(System.Int32)">
+            <summary>
+            生成随机字符串（Generate random strings）
+            </summary>
+            <param name="length">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.GenerateRandomString(System.Int32,System.Int32)">
+            <summary>
+            生成随机字符串（Generate random strings）
+            </summary>
+            <param name="minlength">最小长度</param>
+            <param name="maxlength">最大长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.GenerateRandomNumberString(System.Int32)">
+            <summary>
+            生成随机字符串（数字）（Generate random strings (numbers)）
+            </summary>
+            <param name="length">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.GenerateRandomNumberString(System.Int32,System.Int32)">
+            <summary>
+            生成随机字符串（数字）（Generate random strings (numbers)）
+            </summary>
+            <param name="minlength">最小长度</param>
+            <param name="maxlength">最大长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.GenerateCharacterString(System.Int32)">
+            <summary>
+            生成随机字符串（字符）（Generate random strings (characters)）
+            </summary>
+            <param name="length">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.GenerateCharacterString(System.Int32,System.Int32)">
+            <summary>
+            生成随机字符串（字符）（Generate random strings (characters)）
+            </summary>
+            <param name="minlength">最小长度</param>
+            <param name="maxlength">最大长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.StringHelper.CreateCharacterNumberString(System.Int32)">
+            <summary>
+            生成随机字符串（Generate random strings）
+            </summary>
+            <param name="length">长度</param>
+            <returns></returns>
+        </member>
         <member name="M:ZHI.ZSystem.StringHelper.CreateRandomNumberString(System.Int32)">
             <summary>
             生成随机字符串（数字）（Generate random strings (numbers)）
@@ -661,11 +777,11 @@
             <param name="length">长度</param>
             <returns></returns>
         </member>
-        <member name="M:ZHI.ZSystem.StringHelper.CreateCharacterNumberString(System.Int32)">
+        <member name="M:ZHI.ZSystem.StringHelper.CreateCharacterString(System.Int32)">
             <summary>
             生成随机字符串（字符）（Generate random strings (characters)）
             </summary>
-            <param name="length">长度</param>
+            <param name="length"></param>
             <returns></returns>
         </member>
         <member name="M:ZHI.ZSystem.StringHelper.CreateRandomString(System.Int32)">
@@ -682,6 +798,60 @@
             <param name="minlength">最小长度</param>
             <param name="maxlength">最大长度</param>
             <returns></returns>
+        </member>
+        <member name="T:ZHI.ZSystem.PositionRange">
+            <summary>
+            经纬坐标范围
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.PositionRange._minlongitude">
+            <summary>
+            最小经度
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.PositionRange._minlatitude">
+            <summary>
+            最小纬度
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.PositionRange._maxlongitude">
+            <summary>
+            最大经度
+            </summary>
+        </member>
+        <member name="F:ZHI.ZSystem.PositionRange._maxlatitude">
+            <summary>
+            最大纬度
+            </summary>
+        </member>
+        <member name="M:ZHI.ZSystem.PositionRange.SetPositionRange(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            设置经纬范围值
+            </summary>
+            <param name="minLongitude">最小经度</param>
+            <param name="minLatitude">最小纬度</param>
+            <param name="maxLongitude">最大经度</param>
+            <param name="maxLatitude">最大纬度</param>
+        </member>
+        <member name="P:ZHI.ZSystem.PositionRange.MinLongitude">
+            <summary>
+            最小经度
+            </summary>
+        </member>
+        <member name="P:ZHI.ZSystem.PositionRange.MinLatitude">
+            <summary>
+            最小纬度
+            </summary>
+        </member>
+        <member name="P:ZHI.ZSystem.PositionRange.MaxLongitude">
+            <summary>
+            最大经度
+            </summary>
+        </member>
+        <member name="P:ZHI.ZSystem.PositionRange.MaxLatitude">
+            <summary>
+            最大纬度
+            </summary>
         </member>
         <member name="T:ZHI.ZSystem.ZConvert">
             <summary>
@@ -748,6 +918,20 @@
             </summary>
             <param name="value">时间</param>
             <param name="unit">精确单位</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToUnicodeEncode(System.String)">
+            <summary>
+            字符串转为Unicode字符串（From string to unicode string）
+            </summary>
+            <param name="value">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.ToUnicodeDecode(System.String)">
+            <summary>
+            Unicode字符串转为字符串（From unicode string to string）
+            </summary>
+            <param name="value">字符串</param>
             <returns></returns>
         </member>
         <member name="M:ZHI.ZSystem.ZConvert.TryToBase64Encode(System.String)">
@@ -875,6 +1059,20 @@
             将对象实例转换为UInt64（Convert object instance to UInt64）
             </summary>
             <param name="value">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToUnicodeEncode(System.String)">
+            <summary>
+            字符串转为Unicode字符串（From string to unicode string）
+            </summary>
+            <param name="value">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZHI.ZSystem.ZConvert.TryToUnicodeDecode(System.String)">
+            <summary>
+            Unicode字符串转为字符串（From unicode string to string）
+            </summary>
+            <param name="value">字符串</param>
             <returns></returns>
         </member>
         <member name="T:ZHI.ZSystem.ZObject">

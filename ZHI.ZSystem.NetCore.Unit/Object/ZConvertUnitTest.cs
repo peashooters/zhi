@@ -37,6 +37,12 @@ namespace ZHI.ZSystem.NetCore.Unit.Object
             Console.WriteLine("ip");
             Console.WriteLine("     ToIpFromLong：{0}", ZConvert.ToIpFromLong(2130706433));
             Console.WriteLine("     ToLongFromIp：{0}", ZConvert.ToLongFromIp("127.0.0.1"));
+            //unicode
+            character = "中文";
+            var unicode = "\\u8fd9\\u662f\\u0055\\u006e\\u0069\\u0063\\u006f\\u0064\\u0065\\u7f16\\u7801";
+            Console.WriteLine("unicode");
+            Console.WriteLine("     ToUnicodeEncode：{0}", ZConvert.ToUnicodeEncode(character));
+            Console.WriteLine("     ToUnicodeDecode：{0}", ZConvert.ToUnicodeDecode(unicode));
             Console.WriteLine();
             Console.WriteLine();
         }
@@ -75,6 +81,14 @@ namespace ZHI.ZSystem.NetCore.Unit.Object
             Console.WriteLine("     TryToUInt16：{0}", ZConvert.TryToUInt16("100"));
             Console.WriteLine("     TryToUInt32：{0}", ZConvert.TryToUInt32("100"));
             Console.WriteLine("     TryToUInt64：{0}", ZConvert.TryToUInt64("100"));
+            //unicode
+            character = "中文";
+            var unicode = "\\u0055\\u006e\\u0069\\u0063\\u006f\\u0064\\u0065\\u7f16\\u7801";
+            Console.WriteLine("unicode");
+            Console.WriteLine("     TryToUnicodeEncode：{0}", ZConvert.TryToUnicodeEncode(character));
+            Console.WriteLine("     TryToUnicodeDecode：{0}", ZConvert.TryToUnicodeDecode(unicode));
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
 }
